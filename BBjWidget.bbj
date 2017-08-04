@@ -7,10 +7,11 @@ rem  * implemented in the actual widget
 rem  */
 class public BBjWidget implements BBjControl
 
-REM IMPORTANT DISCLAIMER: The interface BBjControl is a BBj-Internal Interface that may be subject to change 
-REM at any time. The maintainer of this class will make any necessary adjustments to future BBj Versions. 
-REM So we highly recommend to always use this BBjWidget class as a starting point for your UI Components 
-REM development.  
+REM IMPORTANT DISCLAIMER: The BBjControl Interface is a BBj-internal Interface that is
+REM subject to change at any time. The BBjWidget class will be updated to compensate
+REM for future BBjControl changes, so BASIS recommends that you always use BBjWidget
+REM as the starting point for your UI component development projects (and NOT reference 
+REM the BBjControl Interface directly in your code). 
 
     field protected BBjChildWindow Canvas!
     field protected BBjInt X!
