@@ -14,16 +14,16 @@ REM as the starting point for your UI component development projects (and NOT re
 REM the BBjControl Interface directly in your code). 
 
     field protected BBjChildWindow Canvas!
-    field protected BBjInt X!
-    field protected BBjInt Y!
-    field protected BBjInt W!
-    field protected BBjInt H!
+    field protected BBjNumber X!
+    field protected BBjNumber Y!
+    field protected BBjNumber W!
+    field protected BBjNumber H!
     field protected String Text!
 
     method public BBjWidget()
     methodend
 
-    method protected void create(BBjWindow wnd!, BBjInt id!, BBjInt x!, BBjInt y!, BBjInt w!, BBjInt h!)
+    method protected void create(BBjWindow wnd!, BBjNumber id!, BBjNumber x!, BBjNumber y!, BBjNumber w!, BBjNumber h!)
         #Canvas! = wnd!.addChildWindow(id!,x!,y!,w!,h!,"",$00000800$,BBjAPI().getSysGui().getAvailableContext())
         #X!=x!
         #Y!=y!
@@ -129,7 +129,7 @@ REM the BBjControl Interface directly in your code).
         #Canvas!.showToolTipText()
     methodend
      
-    method public void showToolTipText(BBjInt p_x!, BBjInt p_y!)
+    method public void showToolTipText(BBjNumber p_x!, BBjNumber p_y!)
         #Canvas!.showToolTipText(p_x!,p_y!)
     methodend
 
@@ -165,7 +165,7 @@ REM the BBjControl Interface directly in your code).
 
     REM //END PROPERTIES
 
-    method public void setSize(BBjInt p_width!, BBjInt p_height!)
+    method public void setSize(BBjNumber p_width!, BBjNumber p_height!)
         #W! = p_width!
         #H! = p_height!
         #Canvas!.setSize(p_width!,p_height!)
@@ -173,15 +173,15 @@ REM the BBjControl Interface directly in your code).
     methodend
     
         
-    method public BBjInt getWidth()
+    method public BBjNumber getWidth()
         methodret #W!
     methodend
      
-    method public BBjInt getHeight()
+    method public BBjNumber getHeight()
         methodret #H!
     methodend
      
-    method public void setLocation(BBjInt p_xPosition!, BBjInt p_yPosition!)
+    method public void setLocation(BBjNumber p_xPosition!, BBjNumber p_yPosition!)
         #X! = p_xPosition!
         #Y! = p_yPosition!
         #Canvas!.setLocation(p_xPosition!,p_yPosition!) 
@@ -189,11 +189,11 @@ REM the BBjControl Interface directly in your code).
     methodend
     
         
-    method public BBjInt getX()
+    method public BBjNumber getX()
         methodret #X!
     methodend
      
-    method public BBjInt getY()
+    method public BBjNumber getY()
         methodret #Y!
     methodend
      
