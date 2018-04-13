@@ -1,6 +1,6 @@
 {
 	"name":"BBjWidget",
-	"description":"Base Class for BBjUIWidgets",
+	"description":"This Plugin contains the base class for custom UI Widgets.",
 	"version":"0.01",
 	"author":"Basis",
 	"dependencies":[]
