@@ -36,7 +36,7 @@ REM the BBjControl Interface directly in your code).
         BBjAPI().setCustomEventCallback(str(#this!)+str(p_eventType!),p_callback!)
     methodend
     
-    method public void setCallback(int p_eventType!, Object p_snippetSetInstance!, String p_method!) 
+    method public void setCallback(int p_eventType!, CustomObject p_snippetSetInstance!, String p_method!) 
         BBjAPI().setCustomEventCallback(str(#this!)+str(p_eventType!),p_snippetSetInstance!,p_method!)
     methodend                 
                      
