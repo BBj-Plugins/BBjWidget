@@ -32,6 +32,15 @@ REM the BBjControl Interface directly in your code).
         #redraw(BBjAPI.TRUE)
     methodend
 
+    method protected void create(BBjChildWindow wnd!)
+        #Canvas! = wnd! ; rem .addChildWindow(id!,x!,y!,w!,h!,"",$00000800$,BBjAPI().getSysGui().getAvailableContext())
+        #X!= wnd!.getX()
+        #Y!= wnd!.getY()
+        #W!= wnd!.getWidth()
+        #H!= wnd!.getHeight()
+        #redraw(BBjAPI.TRUE)
+    methodend
+
     method public void setCallback(int p_eventType!, String p_callback!)
         BBjAPI().setCustomEventCallback(str(#this!)+str(p_eventType!),p_callback!)
     methodend
