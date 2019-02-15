@@ -75,11 +75,11 @@ REM the BBjControl Interface directly in your code).
     rem /**PROPERTIES **/
     
     method public void setText(String text!)
-        #Text$ = text!
+        #Text! = text!
     methodend
     
     method public String getText() 
-        methodret Text!
+        methodret #Text!
     methodend
 
     method public BBjColor getBackColor()
