@@ -1,3 +1,13 @@
+use com.basis.bbj.proxies.sysgui.BBjControl
+use com.basis.bbj.proxies.sysgui.BBjFont
+use com.basis.bbj.proxies.sysgui.BBjPopupMenu
+use com.basis.bbj.proxies.sysgui.BBjWindow
+use com.basis.startup.type.BBjException
+use com.basis.startup.type.BBjNumber
+use com.basis.startup.type.BBjVector
+use com.basis.startup.type.CustomObject
+use com.basis.startup.type.sysgui.BBjColor
+
 rem /**
 rem  * Standard Implementation of a BBjWidget
 rem  * Tries to implement all necessary methods of the BBj Interface BBjControl with
@@ -90,7 +100,6 @@ REM the BBjControl Interface directly in your code).
         #Canvas!.setBackColor(p_color!)
     methodend
      
-
     method public void setForeColor(BBjColor p_color!)
         #Canvas!.setForeColor(p_color!)
     methodend
@@ -99,7 +108,6 @@ REM the BBjControl Interface directly in your code).
         methodret #Canvas!.getBackColor()
     methodend
      
-
     method public void setFont(BBjFont p_font!)
         #Canvas!.setFont(p_font!)
     methodend
@@ -108,9 +116,15 @@ REM the BBjControl Interface directly in your code).
         methodret #Canvas!.getFont()
     methodend
      
-
     method public boolean isEnabled() 
         methodret #Canvas!.isEnabled()
+    methodend
+    
+    method public boolean isGrouped() 
+        methodret 0
+    methodend
+    
+    method public void setGrouped(boolean arg0!)
     methodend
     
     method public void setEnabled(boolean p_param0!)
@@ -137,7 +151,7 @@ REM the BBjControl Interface directly in your code).
     method public void showToolTipText()
         #Canvas!.showToolTipText()
     methodend
-     
+    
     method public void showToolTipText(BBjNumber p_x!, BBjNumber p_y!)
         #Canvas!.showToolTipText(p_x!,p_y!)
     methodend
@@ -149,7 +163,6 @@ REM the BBjControl Interface directly in your code).
     method public String getShortCue()
         methodret #Canvas!.getShortCue()
     methodend
-     
 
     method public void setLongCue(String p_param!)
         #Canvas!.setLongCue(p_param!)
@@ -196,7 +209,6 @@ REM the BBjControl Interface directly in your code).
         #Canvas!.setLocation(p_xPosition!,p_yPosition!) 
         #redraw(BBjAPI.FALSE)
     methodend
-    
         
     method public BBjNumber getX()
         methodret #X!
@@ -297,13 +309,25 @@ REM the BBjControl Interface directly in your code).
     method public boolean removeStyle(String p_styleName!)
         methodret #Canvas!.removeStyle(p_styleName!)
     methodend     
-  
+    
+    method public String getComputedStyle(String arg0!) 
+        methodret ""
+    methodend
+    
     method public void clearStyles()
         #Canvas!.clearStyles()
     methodend     
   
     method public BBjVector getStyles()
         methodret #Canvas!.getStyles()
+    methodend     
+    
+    method public String getStyle(String arg!)
+        methodret #Canvas!.getStyle(arg!)
+    methodend   
+    
+    method public void setStyle(String arg!, String style!)
+        #Canvas!.setStyle(arg!,style!)
     methodend     
   
     method public void setAttribute(String p_attribute!, String p_value!)
@@ -314,7 +338,6 @@ REM the BBjControl Interface directly in your code).
         methodret #Canvas!.getAttribute(p_attribute!)
     methodend     
   
-
     method public void putClientProperty(Object p_key!, Object p_value!)
         #Canvas!.putClientProperty(p_key!,p_value!)
     methodend     
@@ -322,7 +345,6 @@ REM the BBjControl Interface directly in your code).
     method public Object getClientProperty(Object p_key!)
         methodret #Canvas!.getClientProperty(p_key!)
     methodend     
-  
 
     method public BBjWindow getParentWindow()
         methodret #Canvas!.getParentWindow()
@@ -341,4 +363,3 @@ REM the BBjControl Interface directly in your code).
     methodend
  
 classend
-
