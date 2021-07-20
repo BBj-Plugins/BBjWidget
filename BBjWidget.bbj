@@ -350,6 +350,14 @@ REM the BBjControl Interface directly in your code).
         methodret #Canvas!.getParentWindow()
     methodend     
 
+    method public boolean getBeepOnValidationFailure()
+		methodret 0
+	methodend
+
+	
+	method public void setBeepOnValidationFailure(boolean arg0!)
+	methodend
+
     rem ---------------------utility methods for UI Widget development
     rem /**
     rem  * Fires an event 
