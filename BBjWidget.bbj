@@ -51,6 +51,15 @@ REM the BBjControl Interface directly in your code).
         #redraw(BBjAPI.TRUE)
     methodend
 
+    rem /**
+    rem  * This create method is only for DWC
+    rem  */
+    method protected void create(BBjWindow wnd!, BBjNumber id!)
+        if info(3,6)<>"6" then throw "Illegal Access, must be in DWC",13
+        #setCanvas(wnd!.addChildWindow(id!,1,1,1,1,"",$00100800$,BBjAPI().getSysGui().getAvailableContext()))
+        #redraw(BBjAPI.TRUE)
+    methodend
+
     method public void setCallback(int p_eventType!, String p_callback!)
         BBjAPI().setCustomEventCallback(str(#this!)+str(p_eventType!),p_callback!)
     methodend
@@ -325,9 +334,17 @@ REM the BBjControl Interface directly in your code).
     method public String getStyle(String arg!)
         methodret #Canvas!.getStyle(arg!)
     methodend   
+
+    method public String getDockStyle(String arg!)
+        methodret #Canvas!.getDockStyle(arg!)
+    methodend   
     
     method public void setStyle(String arg!, String style!)
         #Canvas!.setStyle(arg!,style!)
+    methodend
+    
+    method public void setDockStyle(String arg!, String style!)
+        #Canvas!.setDockStyle(arg!,style!)
     methodend     
   
     method public void setAttribute(String p_attribute!, String p_value!)
@@ -351,12 +368,11 @@ REM the BBjControl Interface directly in your code).
     methodend     
 
     method public boolean getBeepOnValidationFailure()
-		methodret 0
-	methodend
+        methodret 0
+    methodend
 
-	
-	method public void setBeepOnValidationFailure(boolean arg0!)
-	methodend
+    method public void setBeepOnValidationFailure(boolean arg0!)
+    methodend
 
     rem ---------------------utility methods for UI Widget development
     rem /**
