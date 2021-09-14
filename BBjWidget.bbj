@@ -314,6 +314,10 @@ REM the BBjControl Interface directly in your code).
     method public boolean addStyle(String p_styleName!)
         methodret #Canvas!.addStyle(p_styleName!)
     methodend     
+
+    method public void addPanelStyle(BBjString x!)
+        #getCanvas().addPanelStyle(x!)
+    methodend    
   
     method public boolean removeStyle(String p_styleName!)
         methodret #Canvas!.removeStyle(p_styleName!)
