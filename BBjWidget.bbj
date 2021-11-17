@@ -34,6 +34,15 @@ REM the BBjControl Interface directly in your code).
     methodend
 
     method protected void create(BBjWindow wnd!, BBjNumber id!, BBjNumber x!, BBjNumber y!, BBjNumber w!, BBjNumber h!)
+        #Canvas! = wnd!.addChildWindow(id!,x!,y!,w!,h!,"",$00008800$,BBjAPI().getSysGui().getAvailableContext())
+        #X!=x!
+        #Y!=y!
+        #W!=w!
+        #H!=h!
+        #redraw(BBjAPI.TRUE)
+    methodend
+
+    method protected void createLegacy(BBjWindow wnd!, BBjNumber id!, BBjNumber x!, BBjNumber y!, BBjNumber w!, BBjNumber h!)
         #Canvas! = wnd!.addChildWindow(id!,x!,y!,w!,h!,"",$00000800$,BBjAPI().getSysGui().getAvailableContext())
         #X!=x!
         #Y!=y!
@@ -56,9 +65,16 @@ REM the BBjControl Interface directly in your code).
     rem  */
     method protected void create(BBjWindow wnd!, BBjNumber id!)
         if info(3,6)<>"6" then throw "Illegal Access, must be in DWC",13
-        #setCanvas(wnd!.addChildWindow(id!,1,1,1,1,"",$00100800$,BBjAPI().getSysGui().getAvailableContext()))
+        #setCanvas(wnd!.addChildWindow(id!,1,1,1,1,"",$00108800$,BBjAPI().getSysGui().getAvailableContext()))
         #redraw(BBjAPI.TRUE)
     methodend
+
+    method protected void createLegacy(BBjWindow wnd!, BBjNumber id!)
+        if info(3,6)<>"6" then throw "Illegal Access, must be in DWC",13
+        #setCanvas(wnd!.addChildWindow(id!,1,1,1,1,"",$00100800$,BBjAPI().getSysGui().getAvailableContext()))
+        #redraw(BBjAPI.TRUE)
+    methodend 
+    
 
     method public void setCallback(int p_eventType!, String p_callback!)
         BBjAPI().setCustomEventCallback(str(#this!)+str(p_eventType!),p_callback!)
