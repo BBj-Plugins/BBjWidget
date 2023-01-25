@@ -374,6 +374,10 @@ REM the BBjControl Interface directly in your code).
     method public String getAttribute(String p_attribute!)
         methodret #Canvas!.getAttribute(p_attribute!)
     methodend     
+    
+    method public void removeAttribute(String p_attribute!)
+        #Canvas!.removeAttribute(p_attribute!)
+    methodend
   
     method public void putClientProperty(Object p_key!, Object p_value!)
         #Canvas!.putClientProperty(p_key!,p_value!)
